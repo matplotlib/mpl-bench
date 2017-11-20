@@ -1,0 +1,119 @@
+{
+    "basic.time_plot": {
+        "code": "def time_plot():\n    fig, ax = plt.subplots()\n    ax.plot([0, 1, 2], [0, 1, 2])\n    fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "basic.time_plot",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "basic.time_plot",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "basic.time_projection": {
+        "code": "def time_projection(proj):\n    fig, ax = plt.subplots(subplot_kw=dict(projection=proj))\n    fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "basic.time_projection",
+        "number": 0,
+        "param_names": [
+            "proj"
+        ],
+        "params": [
+            [
+                "'polar'",
+                "'aitoff'",
+                "'hammer'",
+                "'mollweide'",
+                "'lambert'"
+            ]
+        ],
+        "pretty_name": "basic.time_projection",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "basic.time_savefig": {
+        "code": "def time_savefig():\n    fig, ax = plt.subplots()\n    fig.savefig('time_savefig.png')\n",
+        "goal_time": 2.0,
+        "name": "basic.time_savefig",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "basic.time_savefig",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "basic.time_subplots": {
+        "code": "def time_subplots(N):\n    fig, ax = plt.subplots(N, N)\n    fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "basic.time_subplots",
+        "number": 0,
+        "param_names": [
+            "N"
+        ],
+        "params": [
+            [
+                "1",
+                "2",
+                "10"
+            ]
+        ],
+        "pretty_name": "basic.time_subplots",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "png.time_imread_png_uint16": {
+        "code": "def time_imread_png_uint16():\n    img = _png.read_png_int(os.path.join(os.path.dirname(__file__),\n                                         'data/uint16.png'))\n",
+        "goal_time": 2.0,
+        "name": "png.time_imread_png_uint16",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "pretty_name": "png.time_imread_png_uint16",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "png.time_pngsuite": {
+        "code": "def time_pngsuite(fname):\n    data = plt.imread(os.path.join(dirname, fname))\n",
+        "goal_time": 2.0,
+        "name": "png.time_pngsuite",
+        "number": 0,
+        "param_names": [
+            "param1"
+        ],
+        "params": [
+            [
+                "'basn0g01.png'",
+                "'basn0g02.png'",
+                "'basn0g04.png'",
+                "'basn0g08.png'",
+                "'basn0g16.png'",
+                "'basn2c08.png'",
+                "'basn2c16.png'",
+                "'basn3p01.png'",
+                "'basn3p02.png'",
+                "'basn3p04.png'",
+                "'basn3p08.png'",
+                "'basn4a08.png'",
+                "'basn4a16.png'",
+                "'basn6a08.png'",
+                "'basn6a16.png'"
+            ]
+        ],
+        "pretty_name": "png.time_pngsuite",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "version": 1
+}
