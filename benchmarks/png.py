@@ -9,11 +9,12 @@ from matplotlib import _png
 
 
 dirname = os.path.join(os.path.dirname(__file__), 'data')
-files = sorted(glob.iglob(os.path.join(dirname, 'basn*.png')))
+files = sorted(os.path.basename(f)
+               for f in glob.iglob(os.path.join(dirname, 'basn*.png')))
 
 
 def time_pngsuite(fname):
-    data = plt.imread(fname)
+    data = plt.imread(os.path.join(dirname, fname))
 time_pngsuite.params = files
 
 
