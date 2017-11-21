@@ -18,7 +18,8 @@ time_subplots.param_names = ('N', )
 def time_projection(proj):
     fig, ax = plt.subplots(subplot_kw=dict(projection=proj))
     fig.canvas.draw()
-time_projection.params = ('polar', 'aitoff', 'hammer', 'mollweide', 'lambert')
+time_projection.params = ('rectilinear', 'polar',
+                          'aitoff', 'hammer', 'mollweide', 'lambert')
 time_projection.param_names = ('proj', )
 
 
