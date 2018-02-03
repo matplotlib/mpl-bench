@@ -7,7 +7,11 @@
         "basic.time_savefig": 1511385835000,
         "basic.time_subplots": 1511385846000,
         "png.time_imread_png_uint16": 1511385852000,
-        "png.time_pngsuite": 1511385896000
+        "png.time_pngsuite": 1511385896000,
+        "transforms.BasicSuite.time_creation": 1517449493000,
+        "transforms.BasicSuite.time_frozen": 1517449577000,
+        "transforms.BboxSetSuite.time_bbox_intersection": 1517449584000,
+        "transforms.BboxSetSuite.time_bbox_union": 1517449593000
     },
     "env_name": "conda-py3.6",
     "params": {
@@ -96,6 +100,162 @@
                 8.999910030000003e-05,
                 0.00019876449400000001
             ]
+        },
+        "transforms.BasicSuite.time_creation": {
+            "params": [
+                [
+                    "('TransformNode',)",
+                    "('Bbox', [[0, 1], [2, 3]])",
+                    "('Bbox.unit',)",
+                    "('Bbox.null',)",
+                    "('Bbox.from_bounds', 0, 1, 2, 3)",
+                    "('Bbox.from_extents', 0, 1, 2, 3)",
+                    "('TransformedBbox', 'bbox', 'affine1')",
+                    "('LockableBbox', 'bbox')",
+                    "('Transform',)",
+                    "('TransformWrapper', 'affine1')",
+                    "('AffineBase',)",
+                    "('Affine2D',)",
+                    "('Affine2D.from_values', 1, 2, 3, 4, 5, 6)",
+                    "('Affine2D.identity',)",
+                    "('IdentityTransform',)",
+                    "('BlendedGenericTransform', 'affine1', 'affine2')",
+                    "('BlendedAffine2D', 'affine1', 'affine2')",
+                    "('CompositeGenericTransform', 'affine1', 'affine2')",
+                    "('CompositeAffine2D', 'affine1', 'affine2')",
+                    "('BboxTransform', 'bbox', 'bbox')",
+                    "('BboxTransformTo', 'bbox')",
+                    "('BboxTransformToMaxOnly', 'bbox')",
+                    "('BboxTransformFrom', 'bbox')",
+                    "('ScaledTranslation', 1, 1, 'affine1')",
+                    "('TransformedPath', 'path', 'affine1')",
+                    "('TransformedPatchPath', 'patch')"
+                ]
+            ],
+            "result": [
+                7.606811499999999e-07,
+                4.8668823199999985e-06,
+                5.198825250000001e-06,
+                5.85207708e-06,
+                6.22429731e-06,
+                5.78778393e-06,
+                2.2679037200000007e-06,
+                3.994022389999998e-05,
+                7.453150420000001e-07,
+                3.027274899999999e-06,
+                1.118030259e-06,
+                4.240314229999998e-06,
+                3.6134938400000003e-06,
+                4.461618799999999e-06,
+                1.1094743729999998e-06,
+                2.02650371e-06,
+                4.23618641e-06,
+                2.233996839999999e-06,
+                2.82475262e-06,
+                2.62556883e-06,
+                2.21584738e-06,
+                2.1710166600000003e-06,
+                2.1665980799999995e-06,
+                2.24904625e-06,
+                1.831222491e-06,
+                4.47087193e-05
+            ]
+        },
+        "transforms.BasicSuite.time_frozen": {
+            "params": [
+                [
+                    "('TransformNode',)",
+                    "('Bbox', [[0, 1], [2, 3]])",
+                    "('Bbox.unit',)",
+                    "('Bbox.null',)",
+                    "('Bbox.from_bounds', 0, 1, 2, 3)",
+                    "('Bbox.from_extents', 0, 1, 2, 3)",
+                    "('TransformedBbox', 'bbox', 'affine1')",
+                    "('LockableBbox', 'bbox')",
+                    "('Transform',)",
+                    "('TransformWrapper', 'affine1')",
+                    "('AffineBase',)",
+                    "('Affine2D',)",
+                    "('Affine2D.from_values', 1, 2, 3, 4, 5, 6)",
+                    "('Affine2D.identity',)",
+                    "('IdentityTransform',)",
+                    "('BlendedGenericTransform', 'affine1', 'affine2')",
+                    "('BlendedAffine2D', 'affine1', 'affine2')",
+                    "('CompositeGenericTransform', 'affine1', 'affine2')",
+                    "('CompositeAffine2D', 'affine1', 'affine2')",
+                    "('BboxTransform', 'bbox', 'bbox')",
+                    "('BboxTransformTo', 'bbox')",
+                    "('BboxTransformToMaxOnly', 'bbox')",
+                    "('BboxTransformFrom', 'bbox')",
+                    "('ScaledTranslation', 1, 1, 'affine1')",
+                    "('TransformedPath', 'path', 'affine1')",
+                    "('TransformedPatchPath', 'patch')"
+                ]
+            ],
+            "result": [
+                8.565839999999999e-07,
+                9.13690351e-06,
+                9.30369514e-06,
+                9.70279825e-06,
+                1.0379383780000003e-05,
+                9.845299490000001e-06,
+                1.953554696e-05,
+                5.370037590000001e-05,
+                9.12020825e-07,
+                5.66000308e-06,
+                1.2518520619999998e-06,
+                6.64774008e-06,
+                5.904048560000001e-06,
+                6.70325644e-06,
+                1.238376256e-06,
+                1.069527023e-05,
+                2.1918456100000005e-05,
+                1.3464639320000003e-05,
+                6.5969831600000004e-06,
+                1.2221588369999999e-05,
+                9.77770606e-06,
+                1.2527599720000002e-05,
+                1.0050888129999995e-05,
+                1.0095415019999999e-05,
+                1.9318418559999992e-06,
+                4.34328822e-05
+            ]
+        },
+        "transforms.BboxSetSuite.time_bbox_intersection": {
+            "params": [
+                [
+                    "(0, 0, 1, 1)",
+                    "(0.5, 0.5, 1.5, 1.5)",
+                    "(0.5, 0, 0.75, 0.75)",
+                    "(0.5, 1.5, 1, 2.5)",
+                    "(1, 1, 2, 2)"
+                ]
+            ],
+            "result": [
+                3.7688352599999995e-05,
+                3.7422289499999983e-05,
+                4.1042571800000006e-05,
+                3.107306190000001e-05,
+                3.94248878e-05
+            ]
+        },
+        "transforms.BboxSetSuite.time_bbox_union": {
+            "params": [
+                [
+                    "(0, 0, 1, 1)",
+                    "(0.5, 0.5, 1.5, 1.5)",
+                    "(0.5, 0, 0.75, 0.75)",
+                    "(0.5, 1.5, 1, 2.5)",
+                    "(1, 1, 2, 2)"
+                ]
+            ],
+            "result": [
+                5.11885076e-05,
+                5.25231185e-05,
+                5.8857389900000004e-05,
+                5.802981679999997e-05,
+                5.12529185e-05
+            ]
         }
     },
     "started_at": {
@@ -104,7 +264,11 @@
         "basic.time_savefig": 1511385833000,
         "basic.time_subplots": 1511385835000,
         "png.time_imread_png_uint16": 1511385846000,
-        "png.time_pngsuite": 1511385852000
+        "png.time_pngsuite": 1511385852000,
+        "transforms.BasicSuite.time_creation": 1517449447000,
+        "transforms.BasicSuite.time_frozen": 1517449493000,
+        "transforms.BboxSetSuite.time_bbox_intersection": 1517449577000,
+        "transforms.BboxSetSuite.time_bbox_union": 1517449584000
     },
     "version": 1
 }

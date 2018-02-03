@@ -116,5 +116,139 @@
         "type": "time",
         "unit": "seconds"
     },
+    "transforms.BasicSuite.time_creation": {
+        "code": "def time_creation(self, name_args):\n    self.init(*self.args)\n",
+        "goal_time": 2.0,
+        "name": "transforms.BasicSuite.time_creation",
+        "number": 0,
+        "param_names": [
+            "name_and_args"
+        ],
+        "params": [
+            [
+                "('TransformNode',)",
+                "('Bbox', [[0, 1], [2, 3]])",
+                "('Bbox.unit',)",
+                "('Bbox.null',)",
+                "('Bbox.from_bounds', 0, 1, 2, 3)",
+                "('Bbox.from_extents', 0, 1, 2, 3)",
+                "('TransformedBbox', 'bbox', 'affine1')",
+                "('LockableBbox', 'bbox')",
+                "('Transform',)",
+                "('TransformWrapper', 'affine1')",
+                "('AffineBase',)",
+                "('Affine2D',)",
+                "('Affine2D.from_values', 1, 2, 3, 4, 5, 6)",
+                "('Affine2D.identity',)",
+                "('IdentityTransform',)",
+                "('BlendedGenericTransform', 'affine1', 'affine2')",
+                "('BlendedAffine2D', 'affine1', 'affine2')",
+                "('CompositeGenericTransform', 'affine1', 'affine2')",
+                "('CompositeAffine2D', 'affine1', 'affine2')",
+                "('BboxTransform', 'bbox', 'bbox')",
+                "('BboxTransformTo', 'bbox')",
+                "('BboxTransformToMaxOnly', 'bbox')",
+                "('BboxTransformFrom', 'bbox')",
+                "('ScaledTranslation', 1, 1, 'affine1')",
+                "('TransformedPath', 'path', 'affine1')",
+                "('TransformedPatchPath', 'patch')"
+            ]
+        ],
+        "pretty_name": "transforms.BasicSuite.time_creation",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "transforms.BasicSuite.time_frozen": {
+        "code": "def time_frozen(self, name_args):\n    obj = self.init(*self.args)\n    obj.frozen()\n",
+        "goal_time": 2.0,
+        "name": "transforms.BasicSuite.time_frozen",
+        "number": 0,
+        "param_names": [
+            "name_and_args"
+        ],
+        "params": [
+            [
+                "('TransformNode',)",
+                "('Bbox', [[0, 1], [2, 3]])",
+                "('Bbox.unit',)",
+                "('Bbox.null',)",
+                "('Bbox.from_bounds', 0, 1, 2, 3)",
+                "('Bbox.from_extents', 0, 1, 2, 3)",
+                "('TransformedBbox', 'bbox', 'affine1')",
+                "('LockableBbox', 'bbox')",
+                "('Transform',)",
+                "('TransformWrapper', 'affine1')",
+                "('AffineBase',)",
+                "('Affine2D',)",
+                "('Affine2D.from_values', 1, 2, 3, 4, 5, 6)",
+                "('Affine2D.identity',)",
+                "('IdentityTransform',)",
+                "('BlendedGenericTransform', 'affine1', 'affine2')",
+                "('BlendedAffine2D', 'affine1', 'affine2')",
+                "('CompositeGenericTransform', 'affine1', 'affine2')",
+                "('CompositeAffine2D', 'affine1', 'affine2')",
+                "('BboxTransform', 'bbox', 'bbox')",
+                "('BboxTransformTo', 'bbox')",
+                "('BboxTransformToMaxOnly', 'bbox')",
+                "('BboxTransformFrom', 'bbox')",
+                "('ScaledTranslation', 1, 1, 'affine1')",
+                "('TransformedPath', 'path', 'affine1')",
+                "('TransformedPatchPath', 'patch')"
+            ]
+        ],
+        "pretty_name": "transforms.BasicSuite.time_frozen",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "transforms.BboxSetSuite.time_bbox_intersection": {
+        "code": "def time_bbox_intersection(self, extent):\n    mtransforms.Bbox.intersection(self.bbox1, self.bbox2)\n",
+        "goal_time": 2.0,
+        "name": "transforms.BboxSetSuite.time_bbox_intersection",
+        "number": 0,
+        "param_names": [
+            "extent"
+        ],
+        "params": [
+            [
+                "(0, 0, 1, 1)",
+                "(0.5, 0.5, 1.5, 1.5)",
+                "(0.5, 0, 0.75, 0.75)",
+                "(0.5, 1.5, 1, 2.5)",
+                "(1, 1, 2, 2)"
+            ]
+        ],
+        "pretty_name": "transforms.BboxSetSuite.time_bbox_intersection",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "transforms.BboxSetSuite.time_bbox_union": {
+        "code": "def time_bbox_union(self, extent):\n    mtransforms.Bbox.union((self.bbox1, self.bbox2))\n",
+        "goal_time": 2.0,
+        "name": "transforms.BboxSetSuite.time_bbox_union",
+        "number": 0,
+        "param_names": [
+            "extent"
+        ],
+        "params": [
+            [
+                "(0, 0, 1, 1)",
+                "(0.5, 0.5, 1.5, 1.5)",
+                "(0.5, 0, 0.75, 0.75)",
+                "(0.5, 1.5, 1, 2.5)",
+                "(1, 1, 2, 2)"
+            ]
+        ],
+        "pretty_name": "transforms.BboxSetSuite.time_bbox_union",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
     "version": 1
 }
