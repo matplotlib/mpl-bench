@@ -70,6 +70,136 @@
         "type": "time",
         "unit": "seconds"
     },
+    "image.InterpolationSuite.time_full_draw": {
+        "code": "def time_full_draw(self, interpolation):\n    self.ax.imshow(self.data, interpolation=interpolation,\n                   extent=(1, 2, 1, 2))\n    self.fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "image.InterpolationSuite.time_full_draw",
+        "number": 0,
+        "param_names": [
+            "interpolation"
+        ],
+        "params": [
+            [
+                "'none'",
+                "'nearest'",
+                "'bilinear'",
+                "'bicubic'"
+            ]
+        ],
+        "pretty_name": "image.InterpolationSuite.time_full_draw",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "image.InterpolationSuite.time_setup": {
+        "code": "def time_setup(self, interpolation):\n    self.ax.imshow(self.data, interpolation=interpolation,\n                   extent=(1, 2, 1, 2))\n",
+        "goal_time": 2.0,
+        "name": "image.InterpolationSuite.time_setup",
+        "number": 0,
+        "param_names": [
+            "interpolation"
+        ],
+        "params": [
+            [
+                "'none'",
+                "'nearest'",
+                "'bilinear'",
+                "'bicubic'"
+            ]
+        ],
+        "pretty_name": "image.InterpolationSuite.time_setup",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "image.MaskSuite.time_full_draw": {
+        "code": "def time_full_draw(self, method):\n    self.ax.imshow(self.A, interpolation='nearest')\n    self.fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "image.MaskSuite.time_full_draw",
+        "number": 0,
+        "param_names": [
+            "method"
+        ],
+        "params": [
+            [
+                "'nan'",
+                "'mask'"
+            ]
+        ],
+        "pretty_name": "image.MaskSuite.time_full_draw",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "image.MaskSuite.time_setup": {
+        "code": "def time_setup(self, method):\n    self.ax.imshow(self.A, interpolation='nearest')\n",
+        "goal_time": 2.0,
+        "name": "image.MaskSuite.time_setup",
+        "number": 0,
+        "param_names": [
+            "method"
+        ],
+        "params": [
+            [
+                "'nan'",
+                "'mask'"
+            ]
+        ],
+        "pretty_name": "image.MaskSuite.time_setup",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "image.TypeSuite.time_full_draw": {
+        "code": "def time_full_draw(self, t):\n    self.ax.imshow(self.data)\n    self.fig.canvas.draw()\n",
+        "goal_time": 2.0,
+        "name": "image.TypeSuite.time_full_draw",
+        "number": 0,
+        "param_names": [
+            "dtype"
+        ],
+        "params": [
+            [
+                "'<f8'",
+                "'>f8'",
+                "<class 'numpy.float128'>",
+                "<class 'int'>",
+                "<class 'bool'>"
+            ]
+        ],
+        "pretty_name": "image.TypeSuite.time_full_draw",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
+    "image.TypeSuite.time_setup": {
+        "code": "def time_setup(self, t):\n    self.ax.imshow(self.data)\n",
+        "goal_time": 2.0,
+        "name": "image.TypeSuite.time_setup",
+        "number": 0,
+        "param_names": [
+            "dtype"
+        ],
+        "params": [
+            [
+                "'<f8'",
+                "'>f8'",
+                "<class 'numpy.float128'>",
+                "<class 'int'>",
+                "<class 'bool'>"
+            ]
+        ],
+        "pretty_name": "image.TypeSuite.time_setup",
+        "repeat": 0,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds"
+    },
     "png.time_imread_png_uint16": {
         "code": "def time_imread_png_uint16():\n    img = _png.read_png_int(os.path.join(os.path.dirname(__file__),\n                                         'data/uint16.png'))\n",
         "goal_time": 2.0,
