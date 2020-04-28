@@ -1,20 +1,23 @@
 {
     "basic.time_plot": {
-        "code": "def time_plot():\n    fig, ax = plt.subplots()\n    ax.plot([0, 1, 2], [0, 1, 2])\n    fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "def time_plot():\n    fig, ax = plt.subplots()\n    ax.plot([0, 1, 2], [0, 1, 2])\n    fig.canvas.draw()",
+        "min_run_count": 2,
         "name": "basic.time_plot",
         "number": 0,
         "param_names": [],
         "params": [],
-        "pretty_name": "basic.time_plot",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "57154aecbb11101dd85399c161f94f33bc11959a79fdd21ec7dbc46f056462b7",
+        "warmup_time": -1
     },
     "basic.time_projection": {
-        "code": "def time_projection(proj):\n    fig, ax = plt.subplots(subplot_kw=dict(projection=proj))\n    fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "def time_projection(proj):\n    fig, ax = plt.subplots(subplot_kw=dict(projection=proj))\n    fig.canvas.draw()",
+        "min_run_count": 2,
         "name": "basic.time_projection",
         "number": 0,
         "param_names": [
@@ -30,28 +33,34 @@
                 "'lambert'"
             ]
         ],
-        "pretty_name": "basic.time_projection",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "224a871fb459c58eb9e617d1541593efe22f3ee42d7c2e03fa3b12648f5dcf26",
+        "warmup_time": -1
     },
     "basic.time_savefig": {
-        "code": "def time_savefig():\n    fig, ax = plt.subplots()\n    fig.savefig('time_savefig.png')\n",
-        "goal_time": 2.0,
+        "code": "def time_savefig():\n    fig, ax = plt.subplots()\n    fig.savefig('time_savefig.png')",
+        "min_run_count": 2,
         "name": "basic.time_savefig",
         "number": 0,
         "param_names": [],
         "params": [],
-        "pretty_name": "basic.time_savefig",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "4e3d7712ef04e464eb6707f64e869ffe19c637bc30b159b8e0a9a45bcbbf5076",
+        "warmup_time": -1
     },
     "basic.time_subplots": {
-        "code": "def time_subplots(N):\n    fig, ax = plt.subplots(N, N)\n    fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "def time_subplots(N):\n    fig, ax = plt.subplots(N, N)\n    fig.canvas.draw()",
+        "min_run_count": 2,
         "name": "basic.time_subplots",
         "number": 0,
         "param_names": [
@@ -64,15 +73,18 @@
                 "10"
             ]
         ],
-        "pretty_name": "basic.time_subplots",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "3011231d24629887d5b02d42d84fdaf9ec9c14f1e7f158490a01afa50e598f93",
+        "warmup_time": -1
     },
     "image.InterpolationSuite.time_full_draw": {
-        "code": "def time_full_draw(self, interpolation):\n    self.ax.imshow(self.data, interpolation=interpolation,\n                   extent=(1, 2, 1, 2))\n    self.fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "class InterpolationSuite:\n    def time_full_draw(self, interpolation):\n        self.ax.imshow(self.data, interpolation=interpolation,\n                       extent=(1, 2, 1, 2))\n        self.fig.canvas.draw()\n\n    def setup(self, interpolation):\n        self.data = np.arange(100).reshape((10, 10))\n        self.fig, self.ax = plt.subplots(dpi=100)\n        self.ax.set_xlim(0, 3)\n        self.ax.set_ylim(0, 3)",
+        "min_run_count": 2,
         "name": "image.InterpolationSuite.time_full_draw",
         "number": 0,
         "param_names": [
@@ -86,15 +98,18 @@
                 "'bicubic'"
             ]
         ],
-        "pretty_name": "image.InterpolationSuite.time_full_draw",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "8e4e3fc31c03e37d1146c556914ffdf879e542e78bedd86c06573a40a219318c",
+        "warmup_time": -1
     },
     "image.InterpolationSuite.time_setup": {
-        "code": "def time_setup(self, interpolation):\n    self.ax.imshow(self.data, interpolation=interpolation,\n                   extent=(1, 2, 1, 2))\n",
-        "goal_time": 2.0,
+        "code": "class InterpolationSuite:\n    def time_setup(self, interpolation):\n        self.ax.imshow(self.data, interpolation=interpolation,\n                       extent=(1, 2, 1, 2))\n\n    def setup(self, interpolation):\n        self.data = np.arange(100).reshape((10, 10))\n        self.fig, self.ax = plt.subplots(dpi=100)\n        self.ax.set_xlim(0, 3)\n        self.ax.set_ylim(0, 3)",
+        "min_run_count": 2,
         "name": "image.InterpolationSuite.time_setup",
         "number": 0,
         "param_names": [
@@ -108,15 +123,18 @@
                 "'bicubic'"
             ]
         ],
-        "pretty_name": "image.InterpolationSuite.time_setup",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "2baccdfa831d7812e21749413c77102b6e46005661e9f91bf84a280c8c3a4ef1",
+        "warmup_time": -1
     },
     "image.MaskSuite.time_full_draw": {
-        "code": "def time_full_draw(self, method):\n    self.ax.imshow(self.A, interpolation='nearest')\n    self.fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "class MaskSuite:\n    def time_full_draw(self, method):\n        self.ax.imshow(self.A, interpolation='nearest')\n        self.fig.canvas.draw()\n\n    def setup(self, method):\n        if method == 'nan':\n            A = np.ones((5, 5))\n            A[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            A = np.zeros((5, 5), dtype=bool)\n            A[1:2, 1:2] = True\n            A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.A = A\n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "min_run_count": 2,
         "name": "image.MaskSuite.time_full_draw",
         "number": 0,
         "param_names": [
@@ -128,15 +146,18 @@
                 "'mask'"
             ]
         ],
-        "pretty_name": "image.MaskSuite.time_full_draw",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "60258f55603dc142cb83975da582dd0c6e4dff346214be156fdc0519ee06a8be",
+        "warmup_time": -1
     },
     "image.MaskSuite.time_setup": {
-        "code": "def time_setup(self, method):\n    self.ax.imshow(self.A, interpolation='nearest')\n",
-        "goal_time": 2.0,
+        "code": "class MaskSuite:\n    def time_setup(self, method):\n        self.ax.imshow(self.A, interpolation='nearest')\n\n    def setup(self, method):\n        if method == 'nan':\n            A = np.ones((5, 5))\n            A[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            A = np.zeros((5, 5), dtype=bool)\n            A[1:2, 1:2] = True\n            A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.A = A\n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "min_run_count": 2,
         "name": "image.MaskSuite.time_setup",
         "number": 0,
         "param_names": [
@@ -148,15 +169,18 @@
                 "'mask'"
             ]
         ],
-        "pretty_name": "image.MaskSuite.time_setup",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "38c4a02202d412a4b17c85ceeaa1a7b1e939f56ea9c878a4604b89c51fe47544",
+        "warmup_time": -1
     },
     "image.TypeSuite.time_full_draw": {
-        "code": "def time_full_draw(self, t):\n    self.ax.imshow(self.data)\n    self.fig.canvas.draw()\n",
-        "goal_time": 2.0,
+        "code": "class TypeSuite:\n    def time_full_draw(self, t):\n        self.ax.imshow(self.data)\n        self.fig.canvas.draw()\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        X, Y = np.meshgrid(x, x)\n        Z = ((X - 5)**2 + (Y - 5)**2)**0.5\n    \n        self.data = Z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "min_run_count": 2,
         "name": "image.TypeSuite.time_full_draw",
         "number": 0,
         "param_names": [
@@ -171,15 +195,18 @@
                 "<class 'bool'>"
             ]
         ],
-        "pretty_name": "image.TypeSuite.time_full_draw",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "f7d8a47bd9a12385f358aa4efd1ddbe2182907c01e831cc8e04e6dde3b503db3",
+        "warmup_time": -1
     },
     "image.TypeSuite.time_setup": {
-        "code": "def time_setup(self, t):\n    self.ax.imshow(self.data)\n",
-        "goal_time": 2.0,
+        "code": "class TypeSuite:\n    def time_setup(self, t):\n        self.ax.imshow(self.data)\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        X, Y = np.meshgrid(x, x)\n        Z = ((X - 5)**2 + (Y - 5)**2)**0.5\n    \n        self.data = Z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "min_run_count": 2,
         "name": "image.TypeSuite.time_setup",
         "number": 0,
         "param_names": [
@@ -194,28 +221,18 @@
                 "<class 'bool'>"
             ]
         ],
-        "pretty_name": "image.TypeSuite.time_setup",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
-    },
-    "png.time_imread_png_uint16": {
-        "code": "def time_imread_png_uint16():\n    img = _png.read_png_int(os.path.join(os.path.dirname(__file__),\n                                         'data/uint16.png'))\n",
-        "goal_time": 2.0,
-        "name": "png.time_imread_png_uint16",
-        "number": 0,
-        "param_names": [],
-        "params": [],
-        "pretty_name": "png.time_imread_png_uint16",
-        "repeat": 0,
-        "timeout": 60.0,
-        "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "19efbefe4c52b5523d9a0bc1b6b4ef2dcc0e14088c3febcc7fb82212eb8011d4",
+        "warmup_time": -1
     },
     "png.time_pngsuite": {
-        "code": "def time_pngsuite(fname):\n    data = plt.imread(os.path.join(dirname, fname))\n",
-        "goal_time": 2.0,
+        "code": "def time_pngsuite(fname):\n    data = plt.imread(os.path.join(dirname, fname))",
+        "min_run_count": 2,
         "name": "png.time_pngsuite",
         "number": 0,
         "param_names": [
@@ -240,15 +257,18 @@
                 "'basn6a16.png'"
             ]
         ],
-        "pretty_name": "png.time_pngsuite",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "2b59d1edb633f05d1156f1cea9bd5945f49c7957eb7e6c6113e91e6a3690940b",
+        "warmup_time": -1
     },
     "transforms.BasicSuite.time_creation": {
-        "code": "def time_creation(self, name_args):\n    self.init(*self.args)\n",
-        "goal_time": 2.0,
+        "code": "class BasicSuite:\n    def time_creation(self, name_args):\n        self.init(*self.args)\n\n    def setup(self, name_args):\n        name = name_args[0]\n        obj = mtransforms\n        for name in name_args[0].split('.'):\n            try:\n                obj = getattr(obj, name)\n            except AttributeError:\n                raise NotImplementedError(\n                    '%s is not supported by this version of Matplotlib.' % (\n                        name_args[0], ))\n        self.init = obj\n    \n        args = []\n        for arg in name_args[1:]:\n            if isinstance(arg, str):\n                # arg.frozen() ensures TransformNode's are valid and won't\n                # count in timing.\n                if arg == 'affine1':\n                    arg = mtransforms.Affine2D.from_values(1, 0, 0, 4, 5, 6)\n                    arg.frozen()\n                elif arg == 'affine2':\n                    arg = mtransforms.Affine2D.from_values(6, 0, 0, 3, 2, 1)\n                    arg.frozen()\n                elif arg == 'bbox':\n                    arg = mtransforms.Bbox([[0, 1], [2, 3]])\n                    arg.frozen()\n                elif arg == 'patch':\n                    arg = mpatches.Rectangle((0, 0), 1, 1)\n                elif arg == 'path':\n                    arg = mpath.Path.unit_rectangle()\n                else:\n                    raise NotImplementedError('%s is an unknown argument.' % (\n                        arg, ))\n            args.append(arg)\n        self.args = args",
+        "min_run_count": 2,
         "name": "transforms.BasicSuite.time_creation",
         "number": 0,
         "param_names": [
@@ -284,15 +304,18 @@
                 "('TransformedPatchPath', 'patch')"
             ]
         ],
-        "pretty_name": "transforms.BasicSuite.time_creation",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "9fc03757100d85e728819bd446ab3f43677866c31b3bd759e6b5b06f52ed8754",
+        "warmup_time": -1
     },
     "transforms.BasicSuite.time_frozen": {
-        "code": "def time_frozen(self, name_args):\n    obj = self.init(*self.args)\n    obj.frozen()\n",
-        "goal_time": 2.0,
+        "code": "class BasicSuite:\n    def time_frozen(self, name_args):\n        obj = self.init(*self.args)\n        obj.frozen()\n\n    def setup(self, name_args):\n        name = name_args[0]\n        obj = mtransforms\n        for name in name_args[0].split('.'):\n            try:\n                obj = getattr(obj, name)\n            except AttributeError:\n                raise NotImplementedError(\n                    '%s is not supported by this version of Matplotlib.' % (\n                        name_args[0], ))\n        self.init = obj\n    \n        args = []\n        for arg in name_args[1:]:\n            if isinstance(arg, str):\n                # arg.frozen() ensures TransformNode's are valid and won't\n                # count in timing.\n                if arg == 'affine1':\n                    arg = mtransforms.Affine2D.from_values(1, 0, 0, 4, 5, 6)\n                    arg.frozen()\n                elif arg == 'affine2':\n                    arg = mtransforms.Affine2D.from_values(6, 0, 0, 3, 2, 1)\n                    arg.frozen()\n                elif arg == 'bbox':\n                    arg = mtransforms.Bbox([[0, 1], [2, 3]])\n                    arg.frozen()\n                elif arg == 'patch':\n                    arg = mpatches.Rectangle((0, 0), 1, 1)\n                elif arg == 'path':\n                    arg = mpath.Path.unit_rectangle()\n                else:\n                    raise NotImplementedError('%s is an unknown argument.' % (\n                        arg, ))\n            args.append(arg)\n        self.args = args",
+        "min_run_count": 2,
         "name": "transforms.BasicSuite.time_frozen",
         "number": 0,
         "param_names": [
@@ -328,15 +351,18 @@
                 "('TransformedPatchPath', 'patch')"
             ]
         ],
-        "pretty_name": "transforms.BasicSuite.time_frozen",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "0239a2c94f12e3bd8f960f2b80d7d3f8baff258c7818f0499723935e2e95c3eb",
+        "warmup_time": -1
     },
     "transforms.BboxSetSuite.time_bbox_intersection": {
-        "code": "def time_bbox_intersection(self, extent):\n    mtransforms.Bbox.intersection(self.bbox1, self.bbox2)\n",
-        "goal_time": 2.0,
+        "code": "class BboxSetSuite:\n    def time_bbox_intersection(self, extent):\n        mtransforms.Bbox.intersection(self.bbox1, self.bbox2)\n\n    def setup(self, extent):\n        self.bbox1 = mtransforms.Bbox.from_extents(0, 0, 1, 1)\n        self.bbox2 = mtransforms.Bbox.from_extents(*extent)",
+        "min_run_count": 2,
         "name": "transforms.BboxSetSuite.time_bbox_intersection",
         "number": 0,
         "param_names": [
@@ -351,15 +377,18 @@
                 "(1, 1, 2, 2)"
             ]
         ],
-        "pretty_name": "transforms.BboxSetSuite.time_bbox_intersection",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "d9e2f7d310b7161221e150bd9c62ff7c8178cade7931fe2d455cc533bce1f2f7",
+        "warmup_time": -1
     },
     "transforms.BboxSetSuite.time_bbox_union": {
-        "code": "def time_bbox_union(self, extent):\n    mtransforms.Bbox.union((self.bbox1, self.bbox2))\n",
-        "goal_time": 2.0,
+        "code": "class BboxSetSuite:\n    def time_bbox_union(self, extent):\n        mtransforms.Bbox.union((self.bbox1, self.bbox2))\n\n    def setup(self, extent):\n        self.bbox1 = mtransforms.Bbox.from_extents(0, 0, 1, 1)\n        self.bbox2 = mtransforms.Bbox.from_extents(*extent)",
+        "min_run_count": 2,
         "name": "transforms.BboxSetSuite.time_bbox_union",
         "number": 0,
         "param_names": [
@@ -374,11 +403,14 @@
                 "(1, 1, 2, 2)"
             ]
         ],
-        "pretty_name": "transforms.BboxSetSuite.time_bbox_union",
+        "processes": 2,
         "repeat": 0,
+        "sample_time": 0.01,
         "timeout": 60.0,
         "type": "time",
-        "unit": "seconds"
+        "unit": "seconds",
+        "version": "cd10d0b210e708c7bcdceb163983143b1ffc6918c5a6e817d9a83d8790ce5ad1",
+        "warmup_time": -1
     },
-    "version": 1
+    "version": 2
 }
