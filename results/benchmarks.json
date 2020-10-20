@@ -82,6 +82,38 @@
         "version": "3011231d24629887d5b02d42d84fdaf9ec9c14f1e7f158490a01afa50e598f93",
         "warmup_time": -1
     },
+    "dates.Datetime64Suite.time_conversion": {
+        "code": "class Datetime64Suite:\n    def time_conversion(self):\n        self.datenum = mdates.date2num(self.listOfDates)\n\n    def setup(self):\n        self.listOfDates = np.arange('2010-01-01', '2011-01-01',\n                                     np.timedelta64(1200, 's'),\n                                     dtype='datetime64[s]')",
+        "min_run_count": 2,
+        "name": "dates.Datetime64Suite.time_conversion",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "processes": 2,
+        "repeat": 0,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "a8102594b4d60b8804b7e0a00863ae3873fda2be43cbc3bbc516b7206549b834",
+        "warmup_time": -1
+    },
+    "dates.DatetimeSuite.time_conversion": {
+        "code": "class DatetimeSuite:\n    def time_conversion(self):\n        self.datenum = mdates.date2num(self.listOfDates)\n\n    def setup(self):\n        self.listOfDates = [date for date in self._datetime_range(\n                              datetime.datetime(2020, 1, 1, 0, 1),\n                              datetime.datetime(2020, 12, 31, 23, 59),\n                              datetime.timedelta(minutes=5))]",
+        "min_run_count": 2,
+        "name": "dates.DatetimeSuite.time_conversion",
+        "number": 0,
+        "param_names": [],
+        "params": [],
+        "processes": 2,
+        "repeat": 0,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "6870c6bef9732adf5d34a3cbf34a722ae52e408cd29eb8e5c2e649bc4c11010d",
+        "warmup_time": -1
+    },
     "image.InterpolationSuite.time_full_draw": {
         "code": "class InterpolationSuite:\n    def time_full_draw(self, interpolation):\n        self.ax.imshow(self.data, interpolation=interpolation,\n                       extent=(1, 2, 1, 2))\n        self.fig.canvas.draw()\n\n    def setup(self, interpolation):\n        self.data = np.arange(100).reshape((10, 10))\n        self.fig, self.ax = plt.subplots(dpi=100)\n        self.ax.set_xlim(0, 3)\n        self.ax.set_ylim(0, 3)",
         "min_run_count": 2,
