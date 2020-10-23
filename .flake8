@@ -1,0 +1,11 @@
+[flake8]
+extend-ignore =
+    # Disable "expected 2 blank lines after end of function or class" because
+    # we attach asv function properties right after defining them.
+    E305
+exclude =
+    .git,.github,
+    __pycache__,
+    env,
+    matplotlib,
+    results
