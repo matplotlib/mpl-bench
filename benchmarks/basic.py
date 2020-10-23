@@ -8,11 +8,11 @@ def teardown(*args, **kwargs):
     plt.close('all')
 
 
-def time_subplots(N):
-    fig, ax = plt.subplots(N, N)
+def time_subplots(n):
+    fig, ax = plt.subplots(n, n)
     fig.canvas.draw()
 time_subplots.params = (1, 2, 10)
-time_subplots.param_names = ('N', )
+time_subplots.param_names = ('n', )
 
 
 def time_projection(proj):
