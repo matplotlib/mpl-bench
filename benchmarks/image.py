@@ -49,7 +49,7 @@ class MaskSuite:
             A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)
         else:
             raise NotImplementedError('%s is not a known masking method' %
-                                      (method, ))  
+                                      (method, ))
 
         self.A = A
         self.fig, self.ax = plt.subplots(dpi=100)

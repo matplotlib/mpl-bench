@@ -1,8 +1,5 @@
 from __future__ import absolute_import, division, print_function
 
-import numpy as np
-from numpy.testing import assert_allclose
-
 import matplotlib.patches as mpatches
 import matplotlib.path as mpath
 import matplotlib.transforms as mtransforms
