@@ -13,5 +13,5 @@ files = sorted(os.path.basename(f)
 
 
 def time_pngsuite(fname):
-    data = plt.imread(os.path.join(dirname, fname))
+    plt.imread(os.path.join(dirname, fname))
 time_pngsuite.params = files

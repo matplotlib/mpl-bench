@@ -41,27 +41,27 @@ class MaskSuite:
 
     def setup(self, method):
         if method == 'nan':
-            A = np.ones((5, 5))
-            A[1:2, 1:2] = np.nan
+            img = np.ones((5, 5))
+            img[1:2, 1:2] = np.nan
         elif method == 'mask':
-            A = np.zeros((5, 5), dtype=bool)
-            A[1:2, 1:2] = True
-            A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)
+            img = np.zeros((5, 5), dtype=bool)
+            img[1:2, 1:2] = True
+            img = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), img)
         else:
             raise NotImplementedError('%s is not a known masking method' %
-                                      (method, ))  
+                                      (method, ))
 
-        self.A = A
+        self.img = img
         self.fig, self.ax = plt.subplots(dpi=100)
 
     def teardown(self, method):
         plt.close(self.fig)
 
     def time_setup(self, method):
-        self.ax.imshow(self.A, interpolation='nearest')
+        self.ax.imshow(self.img, interpolation='nearest')
 
     def time_full_draw(self, method):
-        self.ax.imshow(self.A, interpolation='nearest')
+        self.ax.imshow(self.img, interpolation='nearest')
         self.fig.canvas.draw()
 
 
@@ -76,10 +76,10 @@ class TypeSuite:
                 'Long double not supported in this Matplotlib version')
 
         x = np.arange(10)
-        X, Y = np.meshgrid(x, x)
-        Z = ((X - 5)**2 + (Y - 5)**2)**0.5
+        x, y = np.meshgrid(x, x)
+        z = ((x - 5)**2 + (y - 5)**2)**0.5
 
-        self.data = Z.astype(t)
+        self.data = z.astype(t)
 
         self.fig, self.ax = plt.subplots(dpi=100)
 
