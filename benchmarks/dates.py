@@ -1,11 +1,9 @@
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime
 import numpy as np
-
 
 
 class DatetimeSuite:
@@ -27,11 +25,13 @@ class DatetimeSuite:
     def time_conversion(self):
         self.datenum = mdates.date2num(self.listOfDates)
 
+
 class Datetime64Suite:
 
     def setup(self):
         self.listOfDates = np.arange('2010-01-01', '2011-01-01',
                                      np.timedelta64(1200, 's'),
                                      dtype='datetime64[s]')
+
     def time_conversion(self):
         self.datenum = mdates.date2num(self.listOfDates)
