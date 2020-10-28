@@ -59,12 +59,12 @@
         "warmup_time": -1
     },
     "basic.time_subplots": {
-        "code": "def time_subplots(N):\n    fig, ax = plt.subplots(N, N)\n    fig.canvas.draw()",
+        "code": "def time_subplots(n):\n    fig, ax = plt.subplots(n, n)\n    fig.canvas.draw()",
         "min_run_count": 2,
         "name": "basic.time_subplots",
         "number": 0,
         "param_names": [
-            "N"
+            "n"
         ],
         "params": [
             [
@@ -79,7 +79,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "3011231d24629887d5b02d42d84fdaf9ec9c14f1e7f158490a01afa50e598f93",
+        "version": "3ad06473dd57f17a984ad943009793948e2bd4b763c24ffcca747d9ac15c998f",
         "warmup_time": -1
     },
     "image.InterpolationSuite.time_full_draw": {
@@ -133,7 +133,7 @@
         "warmup_time": -1
     },
     "image.MaskSuite.time_full_draw": {
-        "code": "class MaskSuite:\n    def time_full_draw(self, method):\n        self.ax.imshow(self.A, interpolation='nearest')\n        self.fig.canvas.draw()\n\n    def setup(self, method):\n        if method == 'nan':\n            A = np.ones((5, 5))\n            A[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            A = np.zeros((5, 5), dtype=bool)\n            A[1:2, 1:2] = True\n            A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.A = A\n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "code": "class MaskSuite:\n    def time_full_draw(self, method):\n        self.ax.imshow(self.img, interpolation='nearest')\n        self.fig.canvas.draw()\n\n    def setup(self, method):\n        if method == 'nan':\n            img = np.ones((5, 5))\n            img[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            img = np.zeros((5, 5), dtype=bool)\n            img[1:2, 1:2] = True\n            img = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), img)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.img = img\n        self.fig, self.ax = plt.subplots(dpi=100)",
         "min_run_count": 2,
         "name": "image.MaskSuite.time_full_draw",
         "number": 0,
@@ -152,11 +152,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "60258f55603dc142cb83975da582dd0c6e4dff346214be156fdc0519ee06a8be",
+        "version": "ce672e810a1b720c29637ca5a25942b926fc825348526518c2b50b736087709d",
         "warmup_time": -1
     },
     "image.MaskSuite.time_setup": {
-        "code": "class MaskSuite:\n    def time_setup(self, method):\n        self.ax.imshow(self.A, interpolation='nearest')\n\n    def setup(self, method):\n        if method == 'nan':\n            A = np.ones((5, 5))\n            A[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            A = np.zeros((5, 5), dtype=bool)\n            A[1:2, 1:2] = True\n            A = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), A)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.A = A\n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "code": "class MaskSuite:\n    def time_setup(self, method):\n        self.ax.imshow(self.img, interpolation='nearest')\n\n    def setup(self, method):\n        if method == 'nan':\n            img = np.ones((5, 5))\n            img[1:2, 1:2] = np.nan\n        elif method == 'mask':\n            img = np.zeros((5, 5), dtype=bool)\n            img[1:2, 1:2] = True\n            img = np.ma.masked_array(np.ones((5, 5), dtype=np.uint16), img)\n        else:\n            raise NotImplementedError('%s is not a known masking method' %\n                                      (method, ))\n    \n        self.img = img\n        self.fig, self.ax = plt.subplots(dpi=100)",
         "min_run_count": 2,
         "name": "image.MaskSuite.time_setup",
         "number": 0,
@@ -175,11 +175,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "38c4a02202d412a4b17c85ceeaa1a7b1e939f56ea9c878a4604b89c51fe47544",
+        "version": "55c189ed9da20a81e906e4ad7f10a0ee560810eec5927c952f30dceaca2c88c6",
         "warmup_time": -1
     },
     "image.TypeSuite.time_full_draw": {
-        "code": "class TypeSuite:\n    def time_full_draw(self, t):\n        self.ax.imshow(self.data)\n        self.fig.canvas.draw()\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        X, Y = np.meshgrid(x, x)\n        Z = ((X - 5)**2 + (Y - 5)**2)**0.5\n    \n        self.data = Z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "code": "class TypeSuite:\n    def time_full_draw(self, t):\n        self.ax.imshow(self.data)\n        self.fig.canvas.draw()\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        x, y = np.meshgrid(x, x)\n        z = ((x - 5)**2 + (y - 5)**2)**0.5\n    \n        self.data = z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
         "min_run_count": 2,
         "name": "image.TypeSuite.time_full_draw",
         "number": 0,
@@ -201,11 +201,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "f7d8a47bd9a12385f358aa4efd1ddbe2182907c01e831cc8e04e6dde3b503db3",
+        "version": "58d3567884f5cfba262737e2e23df29986337e5be089b1c6f42184efb70a2062",
         "warmup_time": -1
     },
     "image.TypeSuite.time_setup": {
-        "code": "class TypeSuite:\n    def time_setup(self, t):\n        self.ax.imshow(self.data)\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        X, Y = np.meshgrid(x, x)\n        Z = ((X - 5)**2 + (Y - 5)**2)**0.5\n    \n        self.data = Z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
+        "code": "class TypeSuite:\n    def time_setup(self, t):\n        self.ax.imshow(self.data)\n\n    def setup(self, t):\n        if t == np.longdouble and MPL_VERSION < '2.1.0':\n            raise NotImplementedError(\n                'Long double not supported in this Matplotlib version')\n    \n        x = np.arange(10)\n        x, y = np.meshgrid(x, x)\n        z = ((x - 5)**2 + (y - 5)**2)**0.5\n    \n        self.data = z.astype(t)\n    \n        self.fig, self.ax = plt.subplots(dpi=100)",
         "min_run_count": 2,
         "name": "image.TypeSuite.time_setup",
         "number": 0,
@@ -227,11 +227,11 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "19efbefe4c52b5523d9a0bc1b6b4ef2dcc0e14088c3febcc7fb82212eb8011d4",
+        "version": "5f273bd358e7d5ab9f97488c90d9f8683633089a6fa9c4deb6cb31b35d18387f",
         "warmup_time": -1
     },
     "png.time_pngsuite": {
-        "code": "def time_pngsuite(fname):\n    data = plt.imread(os.path.join(dirname, fname))",
+        "code": "def time_pngsuite(fname):\n    plt.imread(os.path.join(dirname, fname))",
         "min_run_count": 2,
         "name": "png.time_pngsuite",
         "number": 0,
@@ -263,7 +263,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "2b59d1edb633f05d1156f1cea9bd5945f49c7957eb7e6c6113e91e6a3690940b",
+        "version": "eaf746b8ac677692ddab31661b10452e9299e137325aaf7766805a97fe798bcd",
         "warmup_time": -1
     },
     "transforms.BasicSuite.time_creation": {
