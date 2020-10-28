@@ -22,3 +22,7 @@ jobs:
         run: |
           asv machine --yes
           asv dev
+
+      - name: Check benchmarks.json is up to date
+        run: |
+          git diff --exit-code -- results/benchmarks.json
