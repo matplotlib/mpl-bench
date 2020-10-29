@@ -20,5 +20,5 @@ def time_subplots_colorbar(n):
         pc = ax.pcolormesh(np.random.randn(20, 20))
         fig.colorbar(pc, ax=ax)
     fig.canvas.draw()
-time_subplots_colorbar.params = (1, 2, 5)
+time_subplots_colorbar.params = (1, 2, 4)
 time_subplots_colorbar.param_names = ('n', )

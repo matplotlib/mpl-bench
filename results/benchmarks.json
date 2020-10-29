@@ -107,7 +107,7 @@
         "warmup_time": -1
     },
     "constrained_layout.time_subplots_colorbar": {
-        "code": "def time_subplots_colorbar(n):\n    fig, axs = plt.subplots(n, n,\n        figsize=(10, 10), constrained_layout=True, squeeze=False)\n    for ax in axs.flat:\n        pc = ax.pcolormesh(np.random.randn(20, 20))\n        fig.colorbar(pc, ax=ax)\n\n    fig.canvas.draw()",
+        "code": "def time_subplots_colorbar(n):\n    fig, axs = plt.subplots(n, n, figsize=(10, 10), constrained_layout=True,\n                            squeeze=False)\n    for ax in axs.flat:\n        pc = ax.pcolormesh(np.random.randn(20, 20))\n        fig.colorbar(pc, ax=ax)\n    fig.canvas.draw()",
         "min_run_count": 2,
         "name": "constrained_layout.time_subplots_colorbar",
         "number": 0,
@@ -118,7 +118,7 @@
             [
                 "1",
                 "2",
-                "5"
+                "4"
             ]
         ],
         "processes": 2,
@@ -127,7 +127,7 @@
         "timeout": 60.0,
         "type": "time",
         "unit": "seconds",
-        "version": "b959a20d706ea0bd1b64db2d541cccfddba3ca0b7d53c26a7268b9ef8b13710a",
+        "version": "3e91473f1989d37b84330901633fb0b17da87534bee5fdb49fb86ab0835bc806",
         "warmup_time": -1
     },
     "image.InterpolationSuite.time_full_draw": {
