@@ -82,6 +82,54 @@
         "version": "3ad06473dd57f17a984ad943009793948e2bd4b763c24ffcca747d9ac15c998f",
         "warmup_time": -1
     },
+    "constrained_layout.time_subplots": {
+        "code": "def time_subplots(n):\n    fig, ax = plt.subplots(n, n, constrained_layout=True)\n    fig.canvas.draw()",
+        "min_run_count": 2,
+        "name": "constrained_layout.time_subplots",
+        "number": 0,
+        "param_names": [
+            "n"
+        ],
+        "params": [
+            [
+                "1",
+                "2",
+                "5"
+            ]
+        ],
+        "processes": 2,
+        "repeat": 0,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "6b3b0a537df31ef04504b7aef2b4f8cad78cfd8f43aed0d1e48c947237b68a91",
+        "warmup_time": -1
+    },
+    "constrained_layout.time_subplots_colorbar": {
+        "code": "def time_subplots_colorbar(n):\n    fig, axs = plt.subplots(n, n, figsize=(10, 10), constrained_layout=True,\n                            squeeze=False)\n    for ax in axs.flat:\n        pc = ax.pcolormesh(np.random.randn(20, 20))\n        fig.colorbar(pc, ax=ax)\n    fig.canvas.draw()",
+        "min_run_count": 2,
+        "name": "constrained_layout.time_subplots_colorbar",
+        "number": 0,
+        "param_names": [
+            "n"
+        ],
+        "params": [
+            [
+                "1",
+                "2",
+                "4"
+            ]
+        ],
+        "processes": 2,
+        "repeat": 0,
+        "sample_time": 0.01,
+        "timeout": 60.0,
+        "type": "time",
+        "unit": "seconds",
+        "version": "3e91473f1989d37b84330901633fb0b17da87534bee5fdb49fb86ab0835bc806",
+        "warmup_time": -1
+    },
     "image.InterpolationSuite.time_full_draw": {
         "code": "class InterpolationSuite:\n    def time_full_draw(self, interpolation):\n        self.ax.imshow(self.data, interpolation=interpolation,\n                       extent=(1, 2, 1, 2))\n        self.fig.canvas.draw()\n\n    def setup(self, interpolation):\n        self.data = np.arange(100).reshape((10, 10))\n        self.fig, self.ax = plt.subplots(dpi=100)\n        self.ax.set_xlim(0, 3)\n        self.ax.set_ylim(0, 3)",
         "min_run_count": 2,
